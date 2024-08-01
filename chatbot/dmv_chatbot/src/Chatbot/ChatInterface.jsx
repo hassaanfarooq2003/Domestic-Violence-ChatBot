@@ -93,7 +93,8 @@ const ChatInterface = () => {
       const response = await axios.get(`http://localhost:8081/api/storequestgetans`,{
         params:{
           chatID:chatID,
-          question:question
+          question:question,
+          chatHistory:chatHistory
         }
       }
       );

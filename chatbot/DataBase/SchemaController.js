@@ -2,8 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const multer = require('multer');
 const {User,Chat,ChatDetails} = require('./Schema');
-
-
+const axios = require('axios');
+const AIurl=`http://localhost:8000/chat`;
 
 const Login= async (req, res, next) => {
     try {
@@ -97,8 +97,12 @@ const LoadDetails=async(req,res,next)=>{
   try{
     const chatID=req.params.chatID;
     const chatdetails=await ChatDetails.find({chatID}).select('question answer');
-    console.log('Chat Details:',chatdetails);
-    res.json(chatdetails);
+    const returnchatdetails=chatdetails.map(chatdetail=>({
+      question:chatdetail.question,
+      answer:chatdetail.answer
+    }));
+    console.log('Chat Details:',returnchatdetails);
+    res.json(returnchatdetails);
   }
   catch(err)
 {
@@ -109,9 +113,23 @@ const LoadDetails=async(req,res,next)=>{
 {/*get command*/}
 const storequestgetans= async(req,res,next)=>{
   try{
-    const {chatID,question}=req.query;
+    const {chatID,question,chatHistory}=req.query;
+    var answer='';
+    console.log('chathistory:',chatHistory);
     /*send this question to the python file and get an answer*/
-    const answer='answer from python file';
+    try
+    {
+      const response=await axios.post(AIurl,{
+        question:question,
+        chat_history:[]
+      });
+      answer=response.data.answer;
+      console.log('Answer',answer);
+    }
+    catch(err)
+    {
+      console.log("error in getting response from AI");
+    }
     const chatdetails=new ChatDetails({chatID,question,answer});
     const savedChatDetails=await chatdetails.save();
     console.log('Saved Chat Details:',savedChatDetails);
