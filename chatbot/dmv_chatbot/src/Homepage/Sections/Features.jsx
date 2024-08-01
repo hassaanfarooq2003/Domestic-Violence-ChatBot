@@ -14,27 +14,28 @@ const Features = ({ darkMode }) => {
   const buttonFocusRingColor = 'focus:ring-yellow-400'
 
   const features = [
-    { title: 'Digital campaigns', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.' },
-    { title: 'Email Marketing', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.' },
-    { title: 'SEO Optimization', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.' },
-    { title: 'Social Media Management', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.' },
-    { title: 'Content Creation', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.' },
-    { title: 'Analytics & Reporting', description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex ut quo possimus adipisci distinctio alias voluptatum blanditiis laudantium.' },
+    { title: '24/7 Support', description: 'The chatbot provides round-the-clock support for individuals facing domestic violence, ensuring help is always available.' },
+    { title: 'Resource Recommendations', description: 'It offers information and referrals to local shelters, legal aid, counseling services, and other relevant resources.' },
+    { title: 'Safety Planning', description: 'The chatbot assists in creating personalized safety plans, helping users to navigate dangerous situations and plan for emergencies.' },
+    { title: 'Confidential Conversations', description: 'All interactions with the chatbot are kept confidential, providing a safe space for users to share their experiences and seek help.' },
+    { title: 'Emotional Support', description: 'The chatbot offers empathetic responses and emotional support, helping users feel heard and understood during difficult times.' },
+    { title: 'Education and Awareness', description: 'It educates users about domestic violence, including recognizing signs of abuse and understanding their rights and options.' },
   ]
+  
 
   return (
     <section className={`${bgColor} ${textColor}`}>
       <div className="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Kickstart your marketing
+             Features
           </h2>
 
-          <p className={`mt-4 ${subTextColor}`}>
+          {/* <p className={`mt-4 ${subTextColor}`}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit.
             Consequuntur aliquam doloribus nesciunt eos fugiat. Vitae aperiam
             fugit consequuntur saepe laborum.
-          </p>
+          </p> */}
         </div>
 
         <div className="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -72,14 +73,6 @@ const Features = ({ darkMode }) => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <a
-            href="#"
-            className={`inline-block rounded ${buttonBgColor} px-12 py-3 text-sm font-medium text-white transition ${buttonHoverBgColor} focus:outline-none focus:ring ${buttonFocusRingColor}`}
-          >
-            Get Started Today
-          </a>
-        </div>
       </div>
     </section>
   )
