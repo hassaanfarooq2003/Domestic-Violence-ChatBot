@@ -123,6 +123,7 @@ const ChatInterface = () => {
       });
       setUserChat([]);
       loadUserChat();
+      onChatChange();
     }
     catch{
       console.log('Error in adding chat');
