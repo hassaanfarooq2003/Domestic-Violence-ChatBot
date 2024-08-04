@@ -115,7 +115,7 @@ const storequestgetans= async(req,res,next)=>{
   try{
     const {chatID,question,chatHistory}=req.query;
     var answer='';
-    console.log('chathistory:',chatHistory);
+    console.log('chathistory at storequestgetans:',chatHistory);
     /*send this question to the python file and get an answer*/
     try
     {
