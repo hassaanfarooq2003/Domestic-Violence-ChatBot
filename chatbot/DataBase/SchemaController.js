@@ -3,7 +3,7 @@ const path = require('path');
 const multer = require('multer');
 const {User,Chat,ChatDetails} = require('./Schema');
 const axios = require('axios');
-const AIurl=`http://localhost:8000/chat`;
+const AIurl=`https://dmv-py.onrender.com/chat`;//https://dmv-py.onrender.com/chat
 
 const Login= async (req, res, next) => {
     try {

@@ -10,14 +10,19 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const uri = 'mongodb://localhost:27017';
-const databaseName = 'ChatBotDomestic';
+const uri = 'mongodb+srv://kysha1004:LQxkqxkiNi1scv9Z@dmvchatbot01.f1u1prb.mongodb.net/?retryWrites=true&w=majority&appName=dmvchatbot01';
+// const databaseName = 'ChatBotDomestic';
 
-mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, dbName: databaseName })
-  .then(() => console.log('Connected to MongoDB'))
-  .catch((err) => console.error(err));
+// mongoose
+//   .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true, dbName: databaseName })
+//   .then(() => console.log('Connected to MongoDB'))
+//   .catch((err) => console.error(err));
 
+ 
+mongoose.connect(uri)
+.then(() => console.log('Connected to MongoDB'))
+.catch((err) => console.error(err));
+ 
 //app.use('/api/Cardsimages', express.static(path.join(__dirname, '../Database/Cardsimages')));
 app.use('/api', router);
 
