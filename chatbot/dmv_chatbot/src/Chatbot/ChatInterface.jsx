@@ -14,9 +14,18 @@ const ChatInterface = () => {
   const[userquestion,setuserquestion]=useState('');
   const navigate=useNavigate();
   const inputRef = useRef(null);
+ // var usechat = true;
   // const lastChatRef = useRef(null);
 
   useEffect(() => {
+  
+  if(localStorage.getItem('usechat')==='true')
+    {
+      console.log("Button added at useeffect");
+      localStorage.setItem('usechat',"false");
+      AddChat();
+    }
+  //  AddChat();
     loadUserChat();
     loadanswers();
     onChatChange(JSON.parse(localStorage.getItem('Chatuse')));

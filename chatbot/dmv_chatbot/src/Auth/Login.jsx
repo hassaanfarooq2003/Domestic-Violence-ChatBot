@@ -11,6 +11,7 @@ const Login = () => {
   });
   const navigate = useNavigate();
   useEffect(() => {
+    localStorage.setItem('usechat','true');
     const savedMode = localStorage.getItem("darkMode");
     setDarkMode(savedMode === "true");
   }, []);
@@ -28,7 +29,7 @@ const Login = () => {
     var email = formData.email;
     var password = formData.password;
     try {
-      const response = await axios.post(`https://domestic-violence-chatbot-1.onrender.com/api/login`, {
+      const response = await axios.post("https://domestic-violence-chatbot-1.onrender.com/api/login", {
         email,
         password,
       });
