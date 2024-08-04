@@ -58,7 +58,7 @@ const Signup = () => {
           localStorage.setItem('user', JSON.stringify(user));
       
           console.log('Signup successful:', response.data);
-          alert('Signup successful! Redirecting to Homepage'); // Alert the user
+          // alert('Signup successful! Redirecting to Homepage'); // Alert the user
           navigate('/chat'); // Redirect to homepage after successful signup
         } catch (error) {
           console.error('Signup error:', error.response.data);
