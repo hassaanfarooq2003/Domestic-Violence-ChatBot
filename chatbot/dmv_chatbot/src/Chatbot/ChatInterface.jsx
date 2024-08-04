@@ -47,7 +47,7 @@ const ChatInterface = () => {
     const userinfo=JSON.parse(localStorage.getItem('user'));
     const userID=userinfo.userId;
     try{
-    const response=await axios.get(`http://localhost:8081/api/chats/${userID}`);
+    const response=await axios.get(`https://domestic-violence-chatbot-1.onrender.com/api/chats/${userID}`);
     console.log('Chats:',response.data.chats);
     setUserChat(response.data.chats);
 
@@ -68,7 +68,7 @@ const ChatInterface = () => {
     const chatID=chatuse.chatID;
     console.log('ChatID:',chatID);
     try{
-      const response=await axios.get(`http://localhost:8081/api/loaddetails/${chatID}`);
+      const response=await axios.get(`https://domestic-violence-chatbot-1.onrender.com/api/loaddetails/${chatID}`);
       console.log('chatHostory:',response.data);
       setchatHistory(response.data);
     }
@@ -90,7 +90,7 @@ const ChatInterface = () => {
     
     try
     {
-      const response = await axios.get(`http://localhost:8081/api/storequestgetans`,{
+      const response = await axios.get(`https://domestic-violence-chatbot-1.onrender.com/api/storequestgetans`,{
         params:{
           chatID:chatID,
           question:question,
@@ -116,7 +116,7 @@ const ChatInterface = () => {
     console.log('Add Chat');
     try
     {
-      const response=await axios.post(`http://localhost:8081/api/createchat`,{
+      const response=await axios.post(`https://domestic-violence-chatbot-1.onrender.com/api/createchat`,{
         userID:JSON.parse(localStorage.getItem('user')).userId,
         title:'New Chat'
       });
@@ -137,7 +137,7 @@ const ChatInterface = () => {
   {
       try
       {
-        const response=axios.post(`http://localhost:8081/api/updateTitle`,{
+        const response=axios.post(`https://domestic-violence-chatbot-1.onrender.com/api/updateTitle`,{
           chatID:chatID,
           title:title
         });

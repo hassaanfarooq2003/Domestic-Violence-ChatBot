@@ -51,7 +51,7 @@ const Signup = () => {
        }
         try {
           console.log('Signup:', email, password);
-          const response = await axios.post('http://localhost:8081/api/signup', {email, password });
+          const response = await axios.post('https://domestic-violence-chatbot-1.onrender.com/api/signup', {email, password });
           const { user } = response.data;
       
           // Store the user data in the local storage
