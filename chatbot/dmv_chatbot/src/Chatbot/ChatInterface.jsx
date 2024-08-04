@@ -19,6 +19,7 @@ const ChatInterface = () => {
   useEffect(() => {
     loadUserChat();
     loadanswers();
+    onChatChange(JSON.parse(localStorage.getItem('Chatuse')));
     if (darkMode) {
       document.documentElement.classList.add('dark');
     } else {
