@@ -9,7 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+//LQxkqxkiNi1scv9Z
 const uri = 'mongodb+srv://kysha1004:LQxkqxkiNi1scv9Z@dmvchatbot01.f1u1prb.mongodb.net/?retryWrites=true&w=majority&appName=dmvchatbot01';
 // const databaseName = 'ChatBotDomestic';
 
